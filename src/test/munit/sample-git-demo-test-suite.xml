@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="sample-git-demo-test-suite.xml" />
+	<munit:test name="sample-git-demo-test-suite-sample-git-demoFlowTest" doc:id="c80ff647-27b1-416a-bf2d-e822d425aa60" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to sample-git-demoFlow" doc:id="cfc8c755-5983-4ad7-a86b-75fdf8b6b003" name="sample-git-demoFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="cfb233ab-60c4-4e68-8c9b-79810bf3c074" expression="#[payload]" is="#[MunitTools::notNullValue()]" message='#["payload is null"]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
