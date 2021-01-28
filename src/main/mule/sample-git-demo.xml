@@ -16,6 +16,10 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener doc:name="Listener" doc:id="52ab6931-a12e-4743-bfa2-e9176b0b7024" config-ref="HTTP_Listener_config" path="/inbetween"/>
 		<set-payload value="INBETWEEN FLOWS" doc:name="Set Payload" doc:id="2f62e720-7ff1-4ab1-8b52-2f2467ba3ed0" />
 	</flow>
+	<flow name="sample-git-demoFlow3" doc:id="0f334fc1-4529-48f8-bdec-1dcf3fd63934" >
+		<http:listener doc:name="Listener" doc:id="bd3587b7-16b3-47cd-9d76-87793b7dad63" config-ref="HTTP_Listener_config" path="/testgit"/>
+		<set-payload value="WELCOME TO GITHUB " doc:name="Set Payload" doc:id="6fa9d334-92b0-46d6-99c4-3e71e3dfa774" />
+	</flow>
 	<flow name="sample-git-demoFlow1" doc:id="c8222459-69e3-4da1-a2fa-295120fbd82b" >
 		<http:listener doc:name="Listener" doc:id="d6fdbd7a-fb2d-4bd5-b5b7-bc7515267c25" config-ref="HTTP_Listener_config" path="/bye"/>
 		<set-payload value="GOODBYE TO MULESOFT" doc:name="Set Payload" doc:id="741582fc-18c3-4620-8712-62297f4c492c" />
